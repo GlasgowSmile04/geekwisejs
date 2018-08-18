@@ -16,7 +16,7 @@ alert(lastName);
 
 //Self-parsing function built into JS? Awesome.
 
-var test = prompt(`What is your birtday?`)
+var test = prompt(`What is your birthday?`)
 var bd = new Date(test);
 let i = 0
 
@@ -25,7 +25,7 @@ let i = 0
       alert("Your birthday is: " + bd);
       i++;}
      else {
-      var test = prompt(`What is your birtday?`)
+      var test = prompt(`What is your birthday?`)
       var bd = new Date(test);
     }
   }
