@@ -21,8 +21,8 @@ var bd = new Date(test);
 let i = 0
 
   while (i !== 1){
-    if (confirm(bd)){
-      alert("Your birthday is: " + bd);
+    if (confirm("Your birthday was entered as: \n" + bd + "\nIs this correct?")){
+      alert("Your birthday is: \n" + bd);
       i++;}
      else {
       var test = prompt(`What is your birthday?`)
