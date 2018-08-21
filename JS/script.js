@@ -1,9 +1,9 @@
 // // Asks for the user's first name
-var firstName = prompt("What is your first name?");
+let firstName = prompt("What is your first name?");
 // // // Logs the user's first name to the console
 console.log(firstName);
 // // // Asks for the user's last name
-var lastName = prompt("What is your last name?");
+let lastName = prompt("What is your last name?");
 // // // Alerts the user's last name
 alert(lastName);
 // *Asks for the user's birthday, confirms whether the birthday recieved is correct, and alerts the resulting birthday
@@ -16,8 +16,8 @@ alert(lastName);
 
 //Self-parsing function built into JS? Awesome.
 
-var test = prompt(`What is your birthday?`)
-var bd = new Date(test);
+let test = prompt(`What is your birthday?`)
+let bd = new Date(test);
 let i = 0
 
   while (i !== 1){
@@ -25,7 +25,7 @@ let i = 0
       alert("Your birthday is: \n" + bd);
       i++;}
      else {
-      var test = prompt(`What is your birthday?`)
-      var bd = new Date(test);
+      test = prompt(`What is your birthday?`)
+      bd = new Date(test);
     }
   }
