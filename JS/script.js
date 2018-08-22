@@ -85,9 +85,56 @@
 // const divide = 4 / 2;
 // const modulo = 11 % 3;
 
-let myNum = 1;
-// myNum++;
-// myNum--;
+// let myNum = 1;
+// // myNum++;
+// // myNum--;
+//
+// myNum += 3;
+// console.log(myNum);
 
-myNum += 3;
-console.log(myNum);
+
+//Takehome Day 3
+//Prompts your user for their name.
+let name = prompt("What is your name?")
+console.log(name);
+//Next, ask the user's favorite color. (Provide the user with the basic 10 colors as options
+//i.e. red, orange, yellow, green, blue, pink, purple, black, white, and grey).
+let color = prompt(`What is your favorite color? \n IE: red, orange, yellow, green, blue, pink, purple, black, white, or grey`).toLowerCase();
+//Depending on the color, write 9 different responses for the possible answers.
+//Include the user's name in the response message.
+
+switch (color) {
+  case "red":
+    alert("If it's painted red, it's goes faster.")
+    break;
+  case "orange":
+    alert("A Clockwork Orange")
+    break;
+  case "yellow":
+    alert("Yellow Submarine.")
+    break;
+  case "green":
+    alert("There ain't no rehab when you addicted to the money maine.")
+    break;
+  case "blue":
+    alert("That one Eiffel 65 song.")
+    break;
+  case "pink":
+    alert("Apparently only real men wear this.")
+    break;
+  case "purple":
+    alert("Mace Windu was an asshole and a large reason why Anikin turned to the dark side.")
+    break;
+  case "black":
+    alert("I wish my goth phase never ended.")
+    break;
+  case "white":
+    alert("Stripes.")
+    break;
+  case "grey":
+    alert("The area in which I've defined my morals.")
+    break;
+
+  default: prompt(`That is not a defined color, try again! \n IE: red, orange, yellow, green, blue, pink, purple, black, white, or grey`)
+
+}
