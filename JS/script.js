@@ -319,59 +319,100 @@
 // }
 // If a non-number argument is passed into the function, alert NaN and prompt for another response
 
-function square(){
-  var x = parseInt(prompt("Choose a number"));
-  if(isNaN(x)){
-  alert(`${x} is not a number, \nPlease input an integer! `);
-  square();
-}
-else {
-  let result = x * x
-  alert(x + " is your number!")
-  return result;
-};
-}
-// In a second function, capitalize the first letter of a string and add a period (.) to the end of the string if it doesn't already end with a period
-function cap(z){
-  let result = z.charAt(0).toUpperCase() + z.slice(1)
-  if(z[z.length - 1] === "."){
-    return result
-  }
-  result += "."
-  return result
-}
-// Create a string that will flip the position of the first and second half of a string. For example, the string “abcdef” would be returned as “defabc”. Hint: use substring.
-function flip(str){
-  //set length of string
-  // let strArr = str.split("");
+// function square(){
+//   var x = parseInt(prompt("Choose a number"));
+//   if(isNaN(x)){
+//   alert(`${x} is not a number, \nPlease input an integer! `);
+//   square();
+// }
+// else {
+//   let result = x * x
+//   alert(x + " is your number!")
+//   return result;
+// };
+// }
+// // In a second function, capitalize the first letter of a string and add a period (.) to the end of the string if it doesn't already end with a period
+// function cap(z){
+//   let result = z.charAt(0).toUpperCase() + z.slice(1)
+//   if(z[z.length - 1] === "."){
+//     return result
+//   }
+//   result += "."
+//   return result
+// }
+// // Create a string that will flip the position of the first and second half of a string. For example, the string “abcdef” would be returned as “defabc”. Hint: use substring.
+// function flip(str){
+//   //set length of string
+//   // let strArr = str.split("");
+//
+//   //determine if string has even number of letters
+//   if((str.length % 2) == 0 ){
+//     //divide string in half
+//     let first = (str.length / 2);
+//     //splice off the first half
+//     var removed = str.substring(0, first);
+//     //push onto end of array
+//     str = str.split("");
+//     str.push(removed);
+//     let i = 0
+//     while(i < first){
+//       str.shift();
+//       i++
+//     }
+//     let result = str.join("")
+//
+//     return result
+//
+// } else {
+//   //divide string in half
+//   let first = Math.floor(str.length / 2);
+//   //splice off the first half
+//   var removed = str.substring(0, first);
+//   //push onto end of array
+//   str = str.split("");
+//   str.push(removed);
+//   let i = 0
+//   while(i < first){
+//     str.shift();
+//     i++
+//   }
+//   let result = str.join("")
+//
+//   return result
+//
+// }
+// }
+//
+//
+// // BONUS: If you are bored by all that, write a function that checks if a given string is a palindrome.
+// function pal(input){
+//   let rev = input.split("").reverse().join("");
+//   console.log(rev);
+//   if(rev == input){
+//     alert(`${input} is a palindrome!`)
+//   } else {
+//     alert("Not a palindrome!")
+//   }
+// }
 
-  //determine if string has even number of letters
-  if((str.length % 2) == 0 ){
-    //divide string in half
-    let first = (str.length / 2);
-    //splice off the first half
-    var removed = str.substring(0, first);
-    //push onto end of array
-    str = str.split("");
-    str.push(removed);
-    let i = 0
-    while(i < first){
-      str.shift();
-      i++
-    }
-    let result = str.join("")
-
-    return result
-
-}
-};
-// BONUS: If you are bored by all that, write a function that checks if a given string is a palindrome.
-function pal(input){
-  let rev = input.split("").reverse().join("");
-  console.log(rev);
-  if(rev == input){
-    alert(`${input} is a palindrome!`)
-  } else {
-    alert("Not a palindrome!")
-  }
-}
+//Day 6
+//How to query the Document
+// let  pTags = document.getElementsByTagName("p")
+// let classTags = document.getElementsByClassName("class")
+// let idTags = document.getElementById("ID")
+// let h1Tags = document.querySelectorAll(".h1-class")
+//
+// Create a function that queries the DOM for the body tag using all of these methods. Log the results to your console.
+// function query(method, ele){
+//   let result;
+//   switch (method) {
+//     case getElementsByTagName:
+//       result = document.getElementsByTagName(ele);
+//       console.log(result);
+//       break;
+//     default:
+//
+//   }
+//   return q;
+// }
+// The function should take 2 arguments: the DOM selector method the user wants to employ and the name of the DOM selector to be searched for.
