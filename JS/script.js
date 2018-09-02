@@ -433,7 +433,6 @@
 
 //Day 6 Takehome
 // Ask your user to give you a scale (Celcius or Fahrenheit) and the tempurature they want to convert. So if they give you 90 Fahrenheit, they would want you to convert 90 degrees Fahrenheit to whatever that is in Celcius
-
 var temp = getTemp();
 var scale = getScale();
 var result = `${temp}${scale}`;
@@ -473,11 +472,9 @@ function convert(temp, scale){
     newScale = "C";
     newResult = `${newTemp}${newScale}`
   };
-
   return newResult;
 };
 
-convert(temp, scale);
 
 // Display the temperature in an h3 with minimal styling.
 let tempDisplay = document.querySelector(".temp");
@@ -487,7 +484,7 @@ tempDisplay.textContent = result
 
 // From that point on, when the user clicks on the h3, run the function to convert the temperature back and forth between Celcius and Fahrenheit.
 function changeDisplay(){
-  if(tempDisplay.textContent = result){
+  if(tempDisplay.textContent == result){
     tempDisplay.textContent = newResult;
   } else {
     tempDisplay.textContent = result;
@@ -495,8 +492,5 @@ function changeDisplay(){
 };
 
 tempDisplay.addEventListener("click", changeDisplay);
-
-
-
 
 // Display the converted temperature in the h3 each time it is changed.
