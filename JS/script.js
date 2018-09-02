@@ -416,3 +416,87 @@
 //   return q;
 // }
 // The function should take 2 arguments: the DOM selector method the user wants to employ and the name of the DOM selector to be searched for.
+
+//Event Listeners!
+
+// let redDiv = document.querySelector(".red-background")
+//
+// redDiv.addEventListener("click", () => {
+//   redDiv.style.background = "black"
+// })
+//
+// let input = document.querySelector("#input")
+//
+// input.addEventListener("keypress", (e) => {
+//   console.log(e.keyCode);
+// })
+
+//Day 6 Takehome
+// Ask your user to give you a scale (Celcius or Fahrenheit) and the tempurature they want to convert. So if they give you 90 Fahrenheit, they would want you to convert 90 degrees Fahrenheit to whatever that is in Celcius
+
+var temp = getTemp();
+var scale = getScale();
+var result = `${temp}${scale}`;
+var newResult = convert(temp, scale);
+
+function getTemp(){
+  let t = parseInt(prompt(`What is the temperature you would like to convert?`));
+    if(isNaN(t)){
+      alert(`${t} is not a number. Please enter a degree in NUMBERS!`)
+      getTemp();
+    } else {
+      return t;
+    };
+};
+
+function getScale(){
+ let x = prompt(`Which scale would you like to convert FROM? \nPlease input C or F. \n (Result will be the opposite scale)`);
+ x = x.toUpperCase();
+   if(x === "C" || x === "F"){
+     return x;
+   }else {
+     getScale();
+   }
+};
+// Employ a function that accepts those two values as arguments: temperature and scale (either celcius or fahrenheit) and converts the tempurature they gave you to the opposite scale.
+
+function convert(temp, scale){
+  let newTemp;
+  let newScale;
+  let newResult;
+  if(scale === "C"){
+    newTemp = parseInt(Math.floor((temp * 1.8) + 32));
+    newScale = "F";
+    newResult = `${newTemp}${newScale}`
+  } else {
+    newTemp = parseInt(Math.floor((temp - 32) / 1.8));
+    newScale = "C";
+    newResult = `${newTemp}${newScale}`
+  };
+
+  return newResult;
+};
+
+convert(temp, scale);
+
+// Display the temperature in an h3 with minimal styling.
+let tempDisplay = document.querySelector(".temp");
+
+tempDisplay.textContent = result
+
+
+// From that point on, when the user clicks on the h3, run the function to convert the temperature back and forth between Celcius and Fahrenheit.
+function changeDisplay(){
+  if(tempDisplay.textContent = result){
+    tempDisplay.textContent = newResult;
+  } else {
+    tempDisplay.textContent = result;
+  };
+};
+
+tempDisplay.addEventListener("click", changeDisplay);
+
+
+
+
+// Display the converted temperature in the h3 each time it is changed.
