@@ -433,27 +433,36 @@
 
 //Day 6 Takehome
 // Ask your user to give you a scale (Celcius or Fahrenheit) and the tempurature they want to convert. So if they give you 90 Fahrenheit, they would want you to convert 90 degrees Fahrenheit to whatever that is in Celcius
-var temp = getTemp();
-var scale = getScale();
-var result = `${temp}${scale}`;
+var temp;
+var scale;
+var result;
+let tempDisplay = document.querySelector(".temp");
+
+getTemp();
+getScale();
+setResult();
+
 var newResult = convert(temp, scale);
 
 function getTemp(){
   let t = parseInt(prompt(`What is the temperature you would like to convert?`));
     if(isNaN(t)){
-      alert(`${t} is not a number. Please enter a degree in NUMBERS!`)
+      alert(`That input is not a number. Please enter a degree in NUMBERS!`)
       getTemp();
     } else {
+      temp = t;
       return t;
     };
 };
 
 function getScale(){
- let x = prompt(`Which scale would you like to convert FROM? \nPlease input C or F. \n (Result will be the opposite scale)`);
- x = x.toUpperCase();
-   if(x === "C" || x === "F"){
-     return x;
+ let s = prompt(`Which scale would you like to convert FROM? \nPlease input C or F. \n (Result will be the opposite scale)`);
+ s = s.toUpperCase();
+   if(s === "C" || s === "F"){
+     scale = s;
+     return s;
    }else {
+     alert("Invalid entry")
      getScale();
    }
 };
@@ -477,10 +486,11 @@ function convert(temp, scale){
 
 
 // Display the temperature in an h3 with minimal styling.
-let tempDisplay = document.querySelector(".temp");
+function setResult(){
+  result = `${temp}${scale}`;
+}
 
 tempDisplay.textContent = result
-
 
 // From that point on, when the user clicks on the h3, run the function to convert the temperature back and forth between Celcius and Fahrenheit.
 function changeDisplay(){
@@ -491,6 +501,40 @@ function changeDisplay(){
   };
 };
 
-tempDisplay.addEventListener("click", changeDisplay);
+document.querySelector("#changer").addEventListener("click", changeDisplay);
 
 // Display the converted temperature in the h3 each time it is changed.
+
+function reset(){
+  temp = "";
+  scale = "";
+  result = "";
+  newResult = "";
+  let tempDisplay = document.querySelector(".temp");
+
+  getTemp();
+  getScale();
+  setResult();
+
+  newResult = convert(temp, scale);
+
+  tempDisplay.textContent = result
+};
+
+document.querySelector("#reset").addEventListener("click", reset);
+
+// function init(){
+//   var temp;
+//   var scale;
+//   var result;
+//   var newResult = "";
+//   let tempDisplay = document.querySelector(".temp");
+//
+//   getTemp();
+//   getScale();
+//   setResult();
+//
+//   var newResult = convert(temp, scale);
+//
+//   tempDisplay.textContent = result
+// };
