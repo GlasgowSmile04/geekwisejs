@@ -1,17 +1,6 @@
-body {
-  background: #000000; /* fallback for old browsers */
-   background: -webkit-linear-gradient(to right, #000000, #434343); /* Chrome 10-25, Safari 5.1-6 */
-   background: linear-gradient(to right, #000000, #434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-div {
-  border: 3px dashed rgb(220, 220, 200);
-  text-align: center;
-  color: rgb(220, 220, 200);
-  margin: 50% 30%;
-  padding: 10px;
-}
-span {
-  font-size: 200%;
-  color: rgb(250, 250, 250);
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
 }
